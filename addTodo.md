@@ -102,7 +102,3 @@ Drag and drop fields from the **INPUT code** to the correct fields.
      "description": "Test description"
    }
    ```
-
-```
-
-```
