@@ -1,0 +1,59 @@
+### Webhook
+
+1. Click `+` and search **Webhook** and click on it.
+2. Change the HTTP Method to: `DELETE`
+3. Change the path field to: `delete`
+
+### Edit Fields
+
+1. Click `+`
+2. Search **Edit Fields** - click on it.
+3. Change to: `Set Delete Fields`
+
+#### Fields:
+
+- **id**: `{{ $json["body"]["id"] }}`
+
+### Code Node
+
+1. Click `+`
+2. Search for **Code** and click on it.
+
+Here is the prompt to enter in the code AI field:
+
+```
+Generate a concise JavaScript code that retrieves data from a node's 'Set Delete Field' output. The code should extract the 'id' field from the node's 'json' property and return a new object with the 'id' in 'json' format.
+```
+
+### Google Sheets2
+
+1. Click **+** and search **Google Sheets**.
+2. Select **Get row(s) in sheet**.
+3. Select your **Document** (Google spreadsheet).
+4. Select your **Sheet** (Tab).
+
+Add filter and choose ID
+`json {{ $json. }} `
+
+### Google Sheets3
+
+1. Click **+** and search **Google Sheets**.
+2. Select **Delete row(s) from sheet**.
+3. Select your **Document** (Google spreadsheet).
+4. Select your **Sheet** (Tab).
+
+To Delete: Row
+
+Start Row Number
+`{{ $json.row_number }} `
+
+### Postman
+
+1. Create a request with **DELETE** and paste the URL from the Webhook.
+2. Click **Body** then select **raw** and **JSON**.
+3. Enter this text:
+   ```json
+   {
+     "id": 3
+   }
+   ```
